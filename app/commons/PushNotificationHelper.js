@@ -50,7 +50,7 @@ class PushNotificationHelper {
     FCM.removeAllDeliveredNotifications()
 
     if (Platform.OS === 'ios') {
-      Permissions.check('notification').then((response) => {
+      Permissions.checkNotifications().then((response) => {
         if (response === 'undetermined') {
           this.requestPermission()
         }
